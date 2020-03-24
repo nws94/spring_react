@@ -20,4 +20,5 @@ public class TestController {
 	public List<Test> list() {
 		return testJapRepo.findAll();
 	}
+
  }
