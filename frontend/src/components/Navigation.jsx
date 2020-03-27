@@ -8,10 +8,10 @@ export default class Navigation extends React.Component {
         <Link to="/">
           Home
         </Link>
-        <Link to="/sign-in">
+        <Link to="/signin">
           Sign In
         </Link>
-        <Link to="/sign-up">
+        <Link to="/signup">
           Sign Up
         </Link>
       </div>
