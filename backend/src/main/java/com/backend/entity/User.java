@@ -17,13 +17,13 @@ import java.util.stream.Collectors;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="testuser")
+@Table(name="user")
 public class User implements UserDetails {
     @Id // pk
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long msrl;
+    private long id;
     @Column(nullable = false, unique = true, length = 30)
-    private String uid;
+    private String email;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false, length = 100)
     private String password;
@@ -45,7 +45,7 @@ public class User implements UserDetails {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Override
     public String getUsername() {
-        return this.uid;
+        return this.email;
     }
     
     //계정이 만료가 안되었는지

@@ -19,11 +19,15 @@ export default class SignUp extends React.Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.handleSignIn().then((res) => {
-      console.log(res.data);
+    this.handleSignUp().then((res) => {
+      if(res.data.success) {
+        this.props.history.push("/signin");
+      }
+    }).catch((err) => {
+      console.log(err.response.data);
     })
   }
-  handleSignIn = () => {
+  handleSignUp = () => {
     const formData = new FormData();
     formData.append("id", this.state.email);
     formData.append("password",this.state.password);

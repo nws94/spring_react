@@ -34,13 +34,13 @@ public class UserJpaRepoTest {
         String name = "angrydaddy";
         // given
         userJpaRepo.save(User.builder()
-                .uid(uid)
+                .email(uid)
                 .password(passwordEncoder.encode("1234"))
                 .name(name)
                 .roles(Collections.singletonList("ROLE_USER"))
                 .build());
         // when
-        Optional<User> user = userJpaRepo.findByUid(uid);
+        Optional<User> user = userJpaRepo.findByEmail(uid);
         // then
         assertNotNull(user);// user객체가 null이 아닌지 체크
         assertTrue(user.isPresent()); // user객체가 존재여부 true/false 체크

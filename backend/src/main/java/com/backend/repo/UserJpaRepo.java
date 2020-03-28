@@ -8,5 +8,5 @@ import com.backend.entity.User;
 
 public interface UserJpaRepo extends JpaRepository<User, Long>{
 	//회원 가입 시 가입한 이메일 조회를 위한 메서드
-	Optional<User> findByUid(String email);
+	Optional<User> findByEmail(String email);
 }

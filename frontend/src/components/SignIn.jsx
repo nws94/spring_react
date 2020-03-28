@@ -19,12 +19,11 @@ export default class SignIn extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.handleSignIn().then((res) => {
-      console.log(res);
       if(res.data.success) {
         this.props.history.push("/");
       }
     }).catch((err) => {
-      console.log(err);
+      console.log(err.response.data);
     })
   }
   handleSignIn = () => {
